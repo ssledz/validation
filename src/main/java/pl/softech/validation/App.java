@@ -118,8 +118,8 @@ public class App {
 
         validation = Validator.validate(builder,
                 Property.of(b -> b::firstName, "firstName", "Slavik", strNotNull().andThen(maxLength(10))),
-                Property.of(b -> b::lastName, "lastName", "XXX", strNotNull())
-//                Property.of(b -> b::email, "email", "user@wp.pl", email())
+                Property.of(b -> b::lastName, "lastName", "XXX", strNotNull()),
+                Property.of(b -> b::email, "email", "user@wp.pl", email())
         );
 
         System.out.println(validation.toOptional().map(User.UserBuilder::build));
